@@ -16,7 +16,7 @@ public class TestGltf : MonoBehaviour
     {
         var model = Importer.LoadFromBytes(bytes);
         var rock = GameObject.Find("PT_Menhir_Rock_02");
-        model.transform.position = rock.transform.position;
+        model.transform.position = rock.transform.position + new Vector3(0, 6, 0);
     }
 
     // Update is called once per frame
@@ -27,7 +27,7 @@ public class TestGltf : MonoBehaviour
     IEnumerator LoadModelBytes(Action<byte[]> cb)
     {
         const string url =
-            "https://assets.objkt.media/file/assets-003/QmbzMNhGAZjbCCzETTe4ZULJkjoFoeh365vniTDkmSi1cM/artifact";
+            "https://assets.objkt.media/file/assets-003/Qmd3A5LayPoyhoTyAeQkPForCPZsqQtnzHNTGayXRNb28K/artifact";
         var www = UnityWebRequest.Get(url);
         yield return www.SendWebRequest();
 
